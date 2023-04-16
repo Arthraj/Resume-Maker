@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../css/Form.css';
-
 function WorkExperience ({onSave,data,next}) {
   const [workExperience, setWorkExperience] = useState(data);
 
@@ -67,10 +66,10 @@ function WorkExperience ({onSave,data,next}) {
             <input type="text" name="aboutRole" value={experience.aboutRole} onChange={(event) => handleInputChange(index, event)}/>
           </label>
           <br />
-          <button onClick={() => handleDeleteField(index)}>Delete</button>
+          <button onClick={() => handleDeleteField(index)}><i className="fa fa-trash" aria-hidden="true"></i></button>
         </div>
       ))}
-      <button onClick={() => handleAddField()}>Add Work Experience</button>
+      <button onClick={() => handleAddField()}>+</button>
     
       <input type="submit" value="Save & Next" />
     </form>

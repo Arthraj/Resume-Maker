@@ -66,22 +66,22 @@ body {
 
 /*buttons*/
 .msform button {
-  width: 100px;
-  background: #1cd073;
+  width: auto;
+  background: #837027;
   font-weight: bold;
   color: white;
   border: 0 none;
   border-radius: 25px;
   cursor: pointer;
-  padding: 10px 5px;
-  margin: 10px 5px;
+  padding: 10px 20px;
+  margin: 5px 5px;
 }
 
 .msform button:hover, .msform button:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #1cd073;
 }
 
-.msform button-previous {
+.msform .button-previous {
   width: 200px;
   background: #C5C5F1;
   font-weight: bold;
@@ -89,11 +89,11 @@ body {
   border: 0 none;
   border-radius: 25px;
   cursor: pointer;
-  padding: 10px 5px;
-  margin: 10px 5px;
+  padding: 10px 0px;
+  margin: 5px 5px;
 }
 
-.msform button-previous:hover, .msform button-previous:focus {
+.msform .button-previous:hover, .msform .button-previous:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
 }
 
@@ -117,51 +117,40 @@ body {
   color: #6441A5;
 
 }
-#progressbar {
-  margin-bottom: 30px;
-  overflow: hidden;
-  /*CSS counters to number the steps*/
-  counter-reset: step;
-}
+/* Slider track */
 
-#progressbar li {
-  list-style-type: none;
-  color: white;
-  text-transform: uppercase;
-  font-size: 9px;
-  width: 33.33%;
-  float: left;
-  position: relative;
-  letter-spacing: 1px;
-}
-
-#progressbar li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 24px;
-  height: 24px;
-  line-height: 26px;
-  display: block;
-  font-size: 12px;
-  color: #333;
-  background: white;
-  border-radius: 25px;
-  margin: 0 auto 10px auto;
-}
-
-/*progressbar connectors*/
-#progressbar li:after {
-  content: '';
+.slider-container input[type="range"]::-webkit-slider-runnable-track {
+  background: #a8e063;
+  background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);
+  background: linear-gradient(to right, #a8e063, #56ab2f);
+  border: none;
+  border-radius: 5px;
   width: 100%;
-  height: 2px;
-  background: white;
-  position: absolute;
-  left: -50%;
-  top: 9px;
-  z-index: -1; /*put it behind the numbers*/
+  height: 10px;
+  cursor: pointer;
 }
 
-#progressbar li:first-child:after {
-  /*connector not needed before the first step*/
-  content: none;
+/* Slider thumb */
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin-top: -3px;
+  cursor: pointer;
+
+}
+#sliderInput{
+  padding: 0px;
+}
+
+
+/* Slider thumb when active */
+.slider-container input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  
 }

@@ -5,10 +5,11 @@ import WorkEx from "./components/WorkExperience";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import "./css/Form.css";
-import './script.js';
+import "./script.js";
+import Slider from "./components/Slider";
 
 const Resume = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   const [allData, setAllData] = useState({});
 
@@ -84,16 +85,18 @@ const Resume = () => {
     setEducationData(data);
   };
 
-  const handleFinalDataSubmit=()=>{
-    let person=prompt("I hereby declare that all the information given by me are true and verified from my end.", "Your Name here");
-    if (person == null || person == "" || person=="Your Name here") {
+  const handleFinalDataSubmit = () => {
+    let person = prompt(
+      "I hereby declare that all the information given by me are true and verified from my end.",
+      "Your Name here"
+    );
+    if (person === null || person === "" || person === "Your Name here") {
       handleFinalDataSubmit();
     } else {
-      let text=`${person} your resume Data has been uploaded please check your Dashboard.`
-      document.getElementById("finalSubmitMessage").innerHTML=text;
+      let text = `${person} your resume Data has been uploaded please check your Dashboard.`;
+      document.getElementById("finalSubmitMessage").innerHTML = text;
     }
-
-  }
+  };
 
   const handleNextStep = () => {
     setStep(step + 1);
@@ -105,19 +108,45 @@ const Resume = () => {
 
   const renderFormStep = () => {
     switch (step) {
+      case 0:
+        return (
+          <PersonalForm
+            onSave={handlePersonalDataSubmit}
+            data={personalData}
+            next={handleNextStep}
+          />
+        );
       case 1:
         return (
-          <PersonalForm onSave={handlePersonalDataSubmit} data={personalData} next={handleNextStep}/>
+          <SkillsForm
+            onSave={handleSkillsDataSubmit}
+            data={skillsData}
+            next={handleNextStep}
+          />
         );
       case 2:
-        return <SkillsForm onSave={handleSkillsDataSubmit} data={skillsData} next={handleNextStep}/>;
-      case 3:
-        return <WorkEx onSave={handleWorkExDataSubmit} data={workExperience} next={handleNextStep}/>;
-      case 4:
-        return <Projects onSave={handleProjectsDataSubmit} data={projects} next={handleNextStep}/>;
-      case 5:
         return (
-          <Education onSave={handleEducationDataSubmit} data={education} next={handleNextStep}/>
+          <WorkEx
+            onSave={handleWorkExDataSubmit}
+            data={workExperience}
+            next={handleNextStep}
+          />
+        );
+      case 3:
+        return (
+          <Projects
+            onSave={handleProjectsDataSubmit}
+            data={projects}
+            next={handleNextStep}
+          />
+        );
+      case 4:
+        return (
+          <Education
+            onSave={handleEducationDataSubmit}
+            data={education}
+            next={handleNextStep}
+          />
         );
       default:
         return null;
@@ -127,13 +156,15 @@ const Resume = () => {
   return (
     <>
       <div className="msform">
-        {/* <ul id="progressbar">
-          <li className="active">Personal Details</li>
-          <li>Social Profiles</li>
-          <li>Account Setup</li>
-        </ul> */}
+      <Slider value={step*20} />
         {renderFormStep()}
-        {step > 1 && <button onClick={() => handlePrevStep()}>Previous</button>} : {step>5 && <button onClick={()=>handleFinalDataSubmit()}>Submit</button>}
+        {step > 0 && (
+          <button onClick={() => handlePrevStep()}>Previous</button>
+        )}{" "}
+        :{" "}
+        {step > 5 && (
+          <button onClick={() => handleFinalDataSubmit()}>Submit</button>
+        )}
       </div>
       <p id="finalSubmitMessage"></p>
     </>

@@ -66,7 +66,7 @@ function Education({onSave,data,next}){
           <button onClick={() => handleDeleteField(index)}>Delete</button>
         </div>
       ))}
-      <button onClick={() => handleAddField()}>Add Work Experience</button>
+      <button onClick={() => handleAddField()}>+</button>
     
       <input type="submit" value="Save & Next" />
     </form>
