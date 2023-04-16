@@ -48,8 +48,11 @@ function PersonalForm({ onSave, data ,next}) {
         <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} />
       </div>
 
-      <input className='saveButton' type="submit" value="Save" />
+      <div className='savebtn'>
+      <input className='saveButton' type="submit" value="Save & Next" />
+      </div>
     </form>
+    
     </>
   );
 }

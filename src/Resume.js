@@ -156,13 +156,24 @@ const Resume = () => {
   return (
     <>
       <div className="msform">
-      <Slider value={step*20} />
+        <Slider value={step * 20} />
         {renderFormStep()}
         {step > 0 && (
-          <button onClick={() => handlePrevStep()}>Previous</button>
+          <button onClick={() => handlePrevStep()}>
+            <svg
+              fill="#fff"
+              width="15px"
+              height="15px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z" />
+            </svg>
+            Previous
+          </button>
         )}{" "}
-        :{" "}
-        {step > 5 && (
+        {" "}
+        {step > 4 && (
           <button onClick={() => handleFinalDataSubmit()}>Submit</button>
         )}
       </div>

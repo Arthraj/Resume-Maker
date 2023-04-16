@@ -2,14 +2,18 @@
 
 /*basic reset*/
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    height: 100%;
-    background: #6441A5; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+  height: 100%;
+  background: #6441a5; 
+}
+
+#root{
+  background: #6441a5;
+  margin-top: 100px;
 }
 
 body {
@@ -37,18 +41,23 @@ body {
   position: relative;
 }
 
-
 /*inputs*/
 .msform input {
-  padding: 15px;
+  padding: 13px;
   border: 1px solid #ccc;
-  border-radius: 0px;
-  margin-bottom: 10px;
+  border-radius: 3px;
+  margin-bottom: 13px;
   width: 100%;
   box-sizing: border-box;
   font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+label{
+  width: 100% !important;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .msform input:focus {
@@ -67,23 +76,24 @@ body {
 /*buttons*/
 .msform button {
   width: auto;
-  background: #837027;
+  background: #1cd073;
   font-weight: bold;
   color: white;
   border: 0 none;
   border-radius: 25px;
   cursor: pointer;
   padding: 10px 20px;
-  margin: 5px 5px;
+  margin: 10px 5px;
 }
 
-.msform button:hover, .msform button:focus {
+.msform button:hover,
+.msform button:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #1cd073;
 }
 
 .msform .button-previous {
   width: 200px;
-  background: #C5C5F1;
+  background: #c5c5f1;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -93,14 +103,15 @@ body {
   margin: 5px 5px;
 }
 
-.msform .button-previous:hover, .msform .button-previous:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+.msform .button-previous:hover,
+.msform .button-previous:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #c5c5f1;
 }
 
 .fs-title {
   font-size: 18px;
   text-transform: uppercase;
-  color: #2C3E50;
+  color: #2c3e50;
   margin-bottom: 10px;
   letter-spacing: 2px;
   font-weight: bold;
@@ -113,10 +124,28 @@ body {
   margin-bottom: 20px;
 }
 
-.saveButton{
-  color: #6441A5;
+.saveButton {
+  background-color: #b0dd2ce5;
+  border: 1px solid black;
+  margin-top: 15px;
 
+  /* background-image: url("../images/right-arrow-svgrepo-com.svg"); */
 }
+
+.savebtn input {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ab2cdd44;
+  line-height: 25px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 13px;
+}
+
 /* Slider track */
 
 .slider-container input[type="range"]::-webkit-slider-runnable-track {
@@ -141,16 +170,71 @@ body {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin-top: -3px;
   cursor: pointer;
-
 }
-#sliderInput{
+#sliderInput {
   padding: 0px;
 }
-
 
 /* Slider thumb when active */
 .slider-container input[type="range"]::-webkit-slider-thumb:active {
   transform: scale(1.2);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* svg{
+  color: white;
+} */
+
+select{
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 13px;
+  margin-top: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+select:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #1cd073;
+  border-radius: 10px;
+  outline-width: 0;
+  transition: All 0.5s ease-in;
+  -webkit-transition: All 0.5s ease-in;
+  -moz-transition: All 0.5s ease-in;
+  -o-transition: All 0.5s ease-in;
+}
+
+.divider{
+  margin:10px;
+  /* background: #000; */
+  border: 2px solid #000;
+}
+
+@media only screen and (max-width: 480px) {
   
+  html{
+    margin: 0px;
+    padding: 0px;
+  }
+  #root{
+    padding: 0px;
+    
+    margin-top: 0px;
+  }
+
+  .msform{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+p{
+  margin-left: auto;
 }
