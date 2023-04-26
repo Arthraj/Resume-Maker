@@ -32,16 +32,22 @@ function PersonalForm({ onSave, data ,next}) {
         <input type="number" id="age" name="age" value={formData.age} onChange={handleChange} max={99} required />
       </div>
 
+
       <div>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email Id:</label>
         <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
       </div>
 
       <div>
         <label htmlFor="phoneNumber">Phone Number:</label>
         <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" value={formData.phoneNumber} onChange={handleChange} maxLength={10} required /><br></br>
-        
       </div>
+
+      <div>
+        <label htmlFor="age">Roll Number</label>
+        <input type="text" id="rollNumber" name="rollNumber" value={formData.rollNumber} onChange={handleChange} />
+      </div>
+
 
       <div>
         <label htmlFor="address">Address:</label>

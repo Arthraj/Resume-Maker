@@ -18,9 +18,12 @@ const Resume = () => {
     age: "",
     email: "",
     phoneNumber: "",
+    rollNumber: "",
     address: "",
   });
+
   const [skillsData, setSkillsData] = useState([{ skill: "", proficiency: 0 }]);
+
   const [workExperience, setworkExperienceData] = useState([
     {
       company: "",
@@ -172,7 +175,6 @@ const Resume = () => {
             Previous
           </button>
         )}{" "}
-        {" "}
         {step > 4 && (
           <button onClick={() => handleFinalDataSubmit()}>Submit</button>
         )}

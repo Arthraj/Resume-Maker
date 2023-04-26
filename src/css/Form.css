@@ -8,12 +8,15 @@
 
 html {
   height: 100%;
-  background: #33c871; 
+  background: rgb(131,58,180);
+background: linear-gradient(203deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
 }
 
 #root{
-  background: #33c871;
-  margin-top: 100px;
+  background: rgb(131,58,180);
+background: linear-gradient(203deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 body {
@@ -76,8 +79,8 @@ label{
 /*buttons*/
 .msform button {
   width: auto;
-  background: #1cd073;
-  font-weight: bold;
+  background: #fd1d1d;
+  /* font-weight: bold; */
   color: white;
   border: 0 none;
   border-radius: 25px;
@@ -125,7 +128,7 @@ label{
 }
 
 .saveButton {
-  background-color: #b0dd2ce5;
+  background-color: #833ab4;
   border: 1px solid black;
   margin-top: 15px;
 
@@ -133,14 +136,14 @@ label{
 }
 
 .savebtn input {
-  width: 50%;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #ab2cdd44;
+  border: 1px solid #833ab4;
   line-height: 25px;
   box-sizing: border-box;
   font-family: montserrat;
-  color: #2c3e50;
+  color: #fff;
   font-size: 15px;
   font-weight: bold;
   border-radius: 13px;
@@ -213,7 +216,6 @@ select:focus {
 
 .divider{
   margin:10px;
-  /* background: #000; */
   border: 2px solid #000;
 }
 
@@ -221,11 +223,10 @@ select:focus {
   
   html{
     margin: 0px;
-    padding: 0px;
+    padding: 20px 10px;
   }
   #root{
     padding: 0px;
-    
     margin-top: 0px;
   }
 
@@ -233,6 +234,15 @@ select:focus {
     height: 100%;
     width: 100%;
   }
+
+  .savebtn input{
+    width: 100%;
+  }
+  
+  .msform button{
+    width: 100%;
+  }
+  
 }
 
 p{
